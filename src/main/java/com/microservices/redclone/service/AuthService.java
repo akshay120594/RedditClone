@@ -1,7 +1,5 @@
 package com.microservices.redclone.service;
 
-import com.microservices.redclone.dto.AuthenticationResponse;
-import com.microservices.redclone.dto.LoginRequest;
 import com.microservices.redclone.dto.RegisterRequest;
 import com.microservices.redclone.exceptions.SpringRedditException;
 import com.microservices.redclone.modal.NotificationEmail;
@@ -9,14 +7,8 @@ import com.microservices.redclone.modal.User;
 import com.microservices.redclone.modal.VerificationToken;
 import com.microservices.redclone.repository.UserRepository;
 import com.microservices.redclone.repository.VerificationTokenRepository;
-import com.microservices.redclone.security.JWTUtility;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
