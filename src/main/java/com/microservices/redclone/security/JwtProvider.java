@@ -21,7 +21,7 @@ public class JwtProvider {
     private String jwtSecret="gdghtu";
 
     /*@Value("${app.jwtExpiration}")*/
-    private int jwtExpiration=3000*5;
+    private int jwtExpiration=3000*5*1000;
 
     public String generateJwtToken(Authentication authentication) {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
