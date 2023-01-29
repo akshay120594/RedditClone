@@ -33,6 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+
+    @Autowired
+    private JwtAuthenticationEntryPoint unauthorizedHandler;
    /* @Autowired
     private PasswordEncoder passwordEncoder;*/
 
@@ -73,8 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
-    @Autowired
-    private JwtAuthenticationEntryPoint unauthorizedHandler;
+
 
    /* @Bean
     public CorsConfigurationSource corsConfigurationSource() {

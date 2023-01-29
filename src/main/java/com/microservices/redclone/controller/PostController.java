@@ -29,17 +29,17 @@ public class PostController {
         return status(HttpStatus.FOUND).body(postService.getAllPosts());
     }
 
-    @GetMapping("{id}")
+    @GetMapping(value = "{id}")
     public ResponseEntity<PostResponse> getPost(@PathVariable Long id) {
         return status(HttpStatus.FOUND).body(postService.getPost(id));
     }
 
-    @GetMapping("by-subreddit/{id}")
+    @GetMapping(value = "by-subreddit/{id}")
     public ResponseEntity<List<PostResponse>> getPostsBySubreddit(Long id) {
         return status(HttpStatus.FOUND).body(postService.getPostsBySubreddit(id));
     }
 
-    @GetMapping("by-user/{name}")
+    @GetMapping(value = "by-user/{name}")
     public ResponseEntity<List<PostResponse>> getPostsByUsername(String username) {
         return status(HttpStatus.FOUND).body(postService.getPostsByUsername(username));
     }
